@@ -16,14 +16,17 @@ document.querySelector("form").addEventListener("submit", async function(event){
   button.setAttribute("disabled", true);
   if (document.getElementById("input-amount").value.length != 0){
     await dbank.TopUp(inputAmount);
-    document.getElementById("input-amount").value = "";
+//     document.getElementById("input-amount").value = "";
   }
   
   if (document.getElementById("withdrawal-amount").value.length != 0){
     await dbank.Withdraw(outputAmount);
-    document.getElementById("withdrawal-amount").value = "";
+//     document.getElementById("withdrawal-amount").value = "";
   }
-
+  
+  document.getElementById("input-amount").value = "";
+  document.getElementById("withdrawal-amount").value = "";
+  
   await dbank.compound();
 
   
